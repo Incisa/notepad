@@ -1,4 +1,4 @@
-###性能优化
+### 性能优化
 
 * 减少HTTP请求
   - 合并请求
@@ -27,7 +27,7 @@
 * 压缩
   - 在http链接上启用gzip压缩
   - 用node实现一下
-  ```
+  ```js
   http.createServer(function(request, response) {
 
   var compressStream = gzip.createGzip()
@@ -50,7 +50,7 @@
     + 页面解析，渲染和js的运行全都是在同一个线程里执行的
     + 执行线程跟UI线程是同一个线程
   - JS的代码是有可能操作DOM的
-  ```
+  ```html
   <p id="p"></p>
   <script>
     document.getElementById('p').innerHTML = 'abc'
