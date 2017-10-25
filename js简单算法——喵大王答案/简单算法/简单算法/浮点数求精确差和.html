@@ -1,0 +1,24 @@
+<script>
+
+var m = +prompt()
+var n = +prompt()
+
+var fangDaCiShu = 0
+
+while (parseInt(m) != m || parseInt(n) != n) {
+  m *= 10
+  n *= 10
+  fangDaCiShu++
+}
+
+var diff = m - n
+
+for (var i = 1; i<=fangDaCiShu; i++) {
+  diff = diff/10
+}
+
+alert(diff)
+
+
+
+</script>

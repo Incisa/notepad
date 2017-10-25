@@ -1,0 +1,67 @@
+<table border="1">
+<script>
+
+var initial = [
+  ['*', '*', '?', '?'],
+  ['?', '?', '?', '*'],
+  ['?', '*', '*', '?'],
+  ['?', '?', '*', '?'],
+  ['?', '*', '?', '*']
+]
+
+// initial[0][0]
+
+var innerArray
+var boomCount
+
+for (var i = 0; i<initial.length; i++) {
+  console.log(initial[i])
+
+  document.write('<tr>')
+  for (var j = 0; j<initial[i].length; j++) {
+
+    boomCount = 0
+
+    // i表示行的坐标，j表示列的坐标
+    if (initial[i][j] == '?') {
+      if ( (initial[i-1] != undefined) && (initial[i-1][j-1] == '*') ) {
+        boomCount++
+      }
+      if ( initial[i+1] != undefined && initial[i+1][j+1] == '*') {
+        boomCount++
+      }
+      if ( initial[i+1] != undefined && initial[i+1][j-1] == '*') {
+        boomCount++
+      } 
+      if ( initial[i-1] != undefined && initial[i-1][j+1] == '*') {
+        boomCount++
+      } 
+      if (initial[i] != undefined && initial[i][j-1] == '*') {
+        boomCount++
+      } 
+      if (initial[i] != undefined && initial[i][j+1] == '*') {
+        boomCount++
+      } 
+      if (initial[i+1] != undefined && initial[i+1][j] == '*') {
+        boomCount++
+      } 
+      if (initial[i-1] != undefined && initial[i-1][j] == '*') {
+        boomCount++
+      } 
+    }
+
+    if (initial[i][j] != '*') {
+      initial[i][j] = boomCount
+    }
+
+    document.write('<td>'+initial[i][j]+'</td>')
+  }
+  document.write('</tr>')
+}
+
+
+
+
+
+</script>
+</table>

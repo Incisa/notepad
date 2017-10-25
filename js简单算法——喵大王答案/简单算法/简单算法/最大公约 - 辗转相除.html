@@ -1,0 +1,21 @@
+<script>
+
+debugger;
+
+var m = 677
+var n = 997 
+
+var counter = 0
+
+while (Math.abs(m - n) != 0) {
+  counter++
+  if (m > n) {
+    m = m - n
+  } else {
+    n = n - m
+  }
+}
+
+console.log(m,counter)
+
+</script>

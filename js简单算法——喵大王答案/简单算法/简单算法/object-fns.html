@@ -1,0 +1,140 @@
+<script>
+
+function keys(obj) {
+  var ret = []
+
+  for (var key in obj) {
+    ret.push(key)
+  }
+
+  return ret
+}
+
+function values(obj) {
+  var ret = []
+  // 键
+  // 属性
+  // 字段
+  // 域
+  // property
+  // attribute
+  for(var key in obj) {
+    ret.push(obj[key])
+  }
+  return ret
+}
+
+function size(a) {
+  if (Array.isArray(a)) {
+    return a.length
+  }
+
+  var l = 0
+  for(var key in a) {
+    l++
+  }
+  return l
+}
+
+
+var testResult = [{
+  pass: true
+  input: 'lksf',
+  output: '',
+},{
+  pass: false,
+  type: 'WrongAnswer',
+},{
+  pass: false,
+  type: 'RuntimeError',
+}, {
+  pass: false,
+  type: 'SyntaxError'
+}]
+
+var fnPass = _.every(testResult, function(oneTestResult, index, array) {
+  return oneTestResult.pass
+})
+
+function identity(arg) {
+  return arg
+}
+
+function every(collection, predicate) {
+  var predicater
+
+  debugger
+
+  if (typeof predicate == 'function') {
+    predicater = predicate
+  }
+
+  if (!predicate) {
+    predicater = function(a) {
+      return a
+    }
+  }
+
+  if (Array.isArray(predicate)){
+    predicater = function(item) {
+      var key = predicate[0]
+      var value = predicate[1]
+
+      return item[key] == value
+    }
+  } else if (typeof predicate == 'object') {
+    predicater = function(item) {
+      for(var key in predicate) {
+        if (predicate[key] != item[key]) {
+          return false
+        }
+      }
+      return true
+    }
+  }
+
+  // predicate = 'active'
+  if (typeof predicate == 'string') {
+    predicater = function(item){
+      return item[predicate]
+    }
+  }
+
+
+
+
+
+  for (var key in collection) {
+    if (!predicater(collection[key], key, collection)) {
+      return false
+    }
+  }
+  return true
+}
+
+
+
+_.every(users, 'active');
+
+
+
+
+_.every(users, function(user) {
+  return user.active
+})
+
+
+
+
+
+
+_.every(users, { 'name': 'barney', 'active': false });
+
+_.every(users, function(user){
+  return user.name == 'barney' && user.active == false
+})
+
+_.every(results, function(one){
+  return one.type=='SyntaxError' || one.type=='RuntimeError'
+})
+</script>

@@ -1,0 +1,100 @@
+<script>
+
+/**
+ * 这个是干嘛的
+ * 参数是干嘛的
+ * 返回什么
+ * 例子
+ * 尽量，或者说，如非刻意，不要更改函数的实际传入的参数值
+ */
+
+// chunk([0,1,2,3,4,5,6,7,8,9],3)
+
+
+var llk = {
+  chunk: function(arr, n) {
+    var r = []
+    var t = []
+
+    var flag = true
+
+    for(var i = 0; i<arr.length; i++) {
+      t.push(arr[i])
+
+      if (t.length == n) {
+        r.push(t)
+        t = []
+      }
+
+    }
+
+
+    return r
+
+  },
+  chunk2: function() {
+
+  },
+  chunk3: function() {
+
+  },
+  compact: function() {
+
+  }
+}
+
+
+
+function chunk(arr, n) {
+  var result = []
+  var temp = []
+
+  for(var i = 0; i<arr.length; i++) {
+    temp.push(arr[i])
+    if (i % n == (n-1) ){
+      result.push(temp)
+      temp = []
+    }
+  }
+
+  result.push(temp)
+
+  return result
+}
+
+function chunk2(arr, n) {
+  var result = new Array(Math.ceil(arr.length/n))
+  var temp = new Array(n)
+
+  for (var i = 0; i<arr.length; i++) {
+    temp[i%n] = arr[i]
+    if (i%n==(n-1)) {
+      result.push(temp)
+      // temp = new Array(n)
+      // for(var j = 0;j<temp.length;j++);
+    }
+  }
+}
+
+function chunk3(arr, n) {
+
+  var l = Math.ceil(arr.length/n)
+
+  var result = new Array(l);
+
+  for(var i = 0; i < l; i++) {
+    result[i] = []
+  }
+
+  // result = [[],[],[],[]]
+
+  for(var i = 0; i<arr.length; i++){
+    result[parseInt(i/n)][i%n] = arr[i]
+  }
+
+  return result
+}
+
+
+
+</script>

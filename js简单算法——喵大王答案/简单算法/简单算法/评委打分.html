@@ -1,0 +1,32 @@
+<script>
+
+var score
+var biggest = -Infinity
+var littlest = Infinity
+
+var n = 5
+
+var sum = 0
+var avg
+
+for (var i = 0; i<n; i++) {
+  score = +prompt()
+
+  sum = sum + score
+
+  if (score > biggest) {
+    biggest = score
+  }
+
+  if (score < littlest) {
+    littlest = score
+  }
+}
+
+sum = sum - biggest - littlest
+
+avg = sum/(n-2)
+
+console.log(avg)
+
+</script>

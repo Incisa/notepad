@@ -1,0 +1,57 @@
+<script>
+
+var numLength = function(n) {
+  var l = 0
+
+  if (n == 0) {
+    return 1
+  }
+
+  while (n > 0) {
+    l++
+    n = parseInt(n/10)
+  }
+
+  return l
+}
+
+var power = function(m, n) {
+  var result = 1
+  while (n--) {
+    result *= m
+  }
+
+  return result
+}
+
+var isSxh = function(n) {
+  var inital = n
+  var l = numLength(n)
+
+  var digitSum = 0
+
+  while (n >= 1) {
+    digitSum += power(n % 10, l)
+    n = parseInt(n/10)
+  }
+
+  return (digitSum == inital)
+}
+
+
+debugger
+
+
+for (var i = 0; i < 10000; i++) {
+
+  if (isSxh(i)) {
+    console.log(i)
+  }
+
+}
+
+
+
+
+
+</script>

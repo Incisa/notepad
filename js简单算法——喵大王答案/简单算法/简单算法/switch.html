@@ -1,0 +1,40 @@
+<script>
+
+var f = function (x) {
+  return x*x
+}
+
+var g = function (x) {
+  return 2*x
+}
+
+var h = function(x) {
+  return f(g(x))
+}
+
+var d = function(f) {
+  return function(x) {
+    var w = 0.000000001
+    var dy = f(x + w) - f(x)
+    var dx = w
+    return dy/dx
+  }
+}
+
+// var ff = d(f)
+
+// ff(2) -> 4
+
+// var p = 3.5
+// var w = 0.0001
+// var dy = f(p + w) - f(p - w)
+// var dx = (p + w) - (p - w)
+
+// var xl = dy/dx
+// console.log(xl)
+
+
+
+
+</script>
+

@@ -1,0 +1,107 @@
+<style>
+  span {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+<script>
+
+function g(x) {
+  return x*x
+}
+
+function h(x) {
+  return Math.random() * 30
+}
+
+var k = function(x) {
+  if (x<-1) {
+    return -x
+  }
+  if (x >1 ) {
+    return x
+  }
+  return 1
+}
+
+var sin = Math.sin
+
+
+// plotFunction(sin)
+// plotFunction(Math.cos)
+// plotFunction(Math.tan)
+// plotFunction(Math.asin)
+// plotFunction(h)
+// plotFunction(k)
+
+// plotFunction(function(x){
+//   return Math.cos(x)
+// })
+
+// plotFunction(function(x) {
+//   return Math.tan(x)
+// })
+
+polorPlot(function(t) {
+  return t
+})
+polorPlot(function(t) {
+  return (Math.sin(5*t) + 4)*10
+})
+polorPlot(function(t) {
+  return 50
+})
+
+// 画出极坐标函数的图像
+function polorPlot(f) {
+  var r
+  var x,y
+  for (var t = 0; t < 100; t += 0.1) {//角度
+    r = f(t)
+    x = r * Math.cos(t)
+    y = r * Math.sin(t)
+
+    drawPoint(x,y)
+  }
+}
+
+function plotFunction(f) {
+  var y
+  for(var x = -100; x < 100; x+=0.01) {
+    y = f(x)
+    drawPoint(x, y)
+  }
+}
+
+function drawPoint(x,y) {
+  var xx = x + 50
+  var yy = -y + 50
+  document.write('<span style="background-color:'+color(xx,yy)+';top:' + yy + 'vh;left:' + xx + 'vw;"></span>')
+}
+
+function color(x,y) {
+  var r = parseInt((x+100) % 256)
+  var g = parseInt((y+150) % 256)
+  return 'rgb('+r+','+g+',80)'
+}
+
+
+
+
+// 程序睡眠n毫秒。严格来说叫做程序卡死n毫秒
+function sleep(n) {
+  var enter = +Date.now()//转换为1970的第一毫秒距离现在的毫秒
+  var current
+  while(true) {
+    current = +Date.now()
+    if (current - enter > n) {
+      break
+    }
+  }
+}
+
+</script>

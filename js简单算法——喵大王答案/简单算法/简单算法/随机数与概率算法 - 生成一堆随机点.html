@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      position: fixed;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var n = 100
+    while(n--) {
+      // document.write('<span style="left:'+Math.random()*100+'vw;top:'+Math.random()*100+'vh;"></span>')
+      document.write(`<span style="left:${Math.random()*100}vw;top:${Math.random()*100}vh;background-color:${randColor()};"></span>`)
+    }
+
+    function randColor(){
+      var r = parseInt(Math.random()*2)
+      var g = parseInt(Math.random()*2)
+      var b = parseInt(Math.random()*10)
+      return '#'+r+g+b
+    }
+  </script>
+</body>
+</html>

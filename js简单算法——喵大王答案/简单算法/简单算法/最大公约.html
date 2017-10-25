@@ -1,0 +1,18 @@
+<script>
+
+debugger;
+
+var m = 9999999
+var n = 9999998
+
+var lesser = m > n ? n : m
+
+console.time('a')
+while ((m % lesser != 0) || (n % lesser != 0)) {
+  lesser--
+}
+console.timeEnd('a')
+
+console.log(lesser)
+
+</script>

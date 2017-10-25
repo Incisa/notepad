@@ -1,0 +1,42 @@
+<script>
+
+
+var sum = 0
+
+var count = 1000000000
+
+var inCircleCount = 0
+var allPointCount = 0
+
+var cx = 0.5
+var cy = 0.5
+
+var x,y
+
+var d
+
+for(var i = 0; i<count; i++) {
+  x = Math.random()
+  y = Math.random()
+  d = distance(cx,cy,x,y)
+
+  if (d < 0.5) {
+    inCircleCount++
+  }
+  allPointCount++
+}
+
+var pi = 4*inCircleCount/allPointCount
+
+console.log(pi)
+
+
+function distance(x1,y1,x2,y2) {
+  var dx = x1-x2
+  var dy = y1-y2
+
+  return Math.sqrt(dx*dx+dy*dy)
+}
+
+
+</script>

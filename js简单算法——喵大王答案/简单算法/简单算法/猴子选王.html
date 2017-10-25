@@ -1,0 +1,41 @@
+<script>
+
+debugger
+
+monkey(11,5).should.to.be.equal.to(8)
+
+function monkey(n, m) {
+  var mkStatus = new Array(n)
+
+  for (var i = 0; i<mkStatus.length; i++) {
+    mkStatus[i] = true
+  }  
+
+
+  var baoshu = 0
+  var currentRemaining = n
+
+  for (i = 0;; i++) {
+    var current = i % n
+    if (mkStatus[current] == true) {
+      baoshu++
+    }
+
+    if (baoshu == m) {
+      mkStatus[current] = false
+      baoshu = 0
+      currentRemaining--
+      if(currentRemaining == 1) {
+        break
+      }
+    }
+  }
+
+  for (i = 0;i<mkStatus.length;i++){
+    if (mkStatus[i]==true){
+      return i+1
+    }
+  }
+}
+
+</script>

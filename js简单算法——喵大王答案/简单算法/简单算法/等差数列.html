@@ -1,0 +1,49 @@
+<script>
+
+var counter = 0
+
+function fibb(n) {
+  counter++
+  if (n == 1 || n == 2) {
+    return 1
+  }
+
+  return fibb(n-1) + fibb(n-2)
+}
+
+
+function S(n) {
+  if (n == 1) {
+    return 1
+  } else {
+    return n + S(n-1)
+  }
+}
+
+function J(n) {
+  if (n == 1) {
+    return 1
+  } else {
+    return n*J(n-1)
+  }
+}
+
+d = 0.0001
+
+function sin(x) {
+  if (x<d) {
+    return d
+  } else {
+    return 2*sin(x/2)*cos(x/2)
+  }
+}
+
+function cos(x) {
+  if (x<d) {
+    return 1
+  } else {
+    return cos(x/2)*cos(x/2) - sin(x/2)*sin(x/2)
+  }
+}
+
+</script>

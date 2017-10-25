@@ -1,0 +1,32 @@
+<script>
+
+var primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43];
+
+function distractToPrime(n) {
+  result = []
+
+  var d//除以素数的结果 2 3 3 11
+  var m = n//除以素数之后剩下的结果 99 33 11
+
+  var flag
+
+  while(m != 1) {
+    for(var i =0 ;i<primes.length;i++) {
+      flag = true
+      if (m % primes[i] == 0) {
+        result.push(primes[i])
+        m = m / primes[i]
+        flag = false
+        break
+      }
+    }
+    if (flag) {
+      return n
+    }
+  }
+
+  return result
+}
+
+
+</script>

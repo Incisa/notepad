@@ -1,0 +1,66 @@
+<script>
+
+
+
+console.log(
+  vectorSum(
+    [1,2],
+    [3,4]
+  )
+)
+
+console.log(
+  reverse(
+    [
+      1,
+      ,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+    ]
+  )
+)
+
+function vectorProduct(v1, v2) {
+  var result = 0
+
+  for (var i = 0; i<v1.length; i++) {
+    result += v1[i]*v2[i]
+  }
+
+  // return result
+  console.log(result)
+}
+
+function vectorSum(v1, v2) {
+  var result = []
+
+  for (var i = 0;i<v1.length;i++) {
+    // result.push(v1[i]+v2[i])
+    result[i] = v1[i]+v2[i]
+  }
+
+  return result
+
+}
+
+// arr = [1,2,3,4,5]
+function reverse(arr) {
+
+  var result = []
+
+  var len = arr.length
+
+  for(var i = 0; i< arr.length; i++) {
+    result[len - 1 - i]  = arr[i]
+  }
+
+  return result
+}
+
+
+</script>

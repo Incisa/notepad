@@ -1,0 +1,27 @@
+<script>
+
+function expandStr(str) {
+  var result = ''
+
+  var dashStart, dashEnd
+
+  for( var i = 0 ;i<str.length;i++) {
+    if (str[i] == '-') {
+
+      dashStart = str.charCodeAt(i-1) + 1
+      dashEnd = str.charCodeAt(i+1) - 1
+      for (var j = dashStart; j<=dashEnd; j++) {
+        result += String.fromCharCode(j)
+      }
+
+    } else {
+
+      result += str[i]
+
+    }
+  }
+
+  return result
+}
+
+</script>

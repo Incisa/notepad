@@ -1,0 +1,36 @@
+<script>
+
+
+
+function singleFirst(str) {
+  debugger
+  var counting = {
+    a:0,
+    b:0,
+    // ...
+    z:0,
+  }
+
+  // for (var i = 'a'.charCodeAt(0); i<='z'.charCodeAt(0); i++) {
+  //   counting[String.fromCharCode(i)] = 0
+  // }
+
+  for( var i = 0 ;i<str.length; i++){
+    var char = str[i]
+
+    counting[char]++
+  }
+
+  for( var i = 0; i<str.length; i++) {
+    var char = str[i]
+
+    if (counting[char] == 1) {
+      return char
+    }
+  }
+
+  return null
+
+}
+
+</script>

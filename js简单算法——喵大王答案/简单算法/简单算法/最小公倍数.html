@@ -1,0 +1,24 @@
+<script>
+
+debugger;
+
+var m = 50
+var n = 55
+
+var bigger = m < n ? n : m
+
+console.time('a')
+
+// while (bigger % m ==0 && bigger % n == 0) { 
+//   bigger++
+// }
+
+while ((bigger % m != 0) || (bigger % n != 0)) {
+  bigger++
+}
+
+console.timeEnd('a')
+
+console.log(bigger)
+
+</script>

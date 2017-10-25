@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lema</title>
+	<style>
+		table {
+			border-spacing: 0;
+		}
+		td {
+			width: 1px;
+			height: 1px;
+		}
+	</style>
+	<script src="lena.js"></script>
+</head>
+<body>
+	<table>
+		<script>
+			var width = 385
+			var height = 180
+			var arr = new Array()
+			for (var i = 0; i < width; i ++) {
+				document.write('<tr>')
+				arr[i] = new Array()
+				for (var j = 0; j < height; j ++) {
+					document.write('<td style = "background-color: '+ 'rgba' + '(' + lena[i][j][0] + ',' + lena[i][j][1] + ',' + lena[i][j][2] + ',' + lena[i][j][3] + ')' + '"></td>') 
+				}
+				document.write('</tr>')
+			}
+		</script>
+	</table>
+</body>
+</html>

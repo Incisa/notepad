@@ -1,0 +1,32 @@
+<script>
+
+var a = +prompt()
+var b = +prompt()
+var c = +prompt()
+
+var temp
+
+if (c > b) {
+  temp = c
+  c = b
+  b = temp
+}
+
+if (a < c) {
+  temp = a
+  a = b
+  b = c
+  c = temp
+} else if (a < b) {
+  temp = a
+  a = b
+  b = temp
+}
+
+console.log(a,b,c)
+
+
+
+
+
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    /*transform: ;*/
+    transform-style: preserve-3d;
+    transition: transform 30s;
+
+    width: calc(16*25px);
+    height: calc(16*25px);
+    margin: 150px auto;
+    transform-origin: 50% 50% -200PX;
+  }
+  table:hover {
+    transform: rotateX(1313deg) rotateY(2333deg) rotateZ(0);
+  }
+  tbody {
+    position: absolute;
+    width: calc(16*25px);
+    height: calc(16*25px);
+  }
+  td {
+    width: 25px;
+    height: 25px;
+  }
+</style>
+</head>
+<body>
+<div>
+<table>
+  <script>
+  for (var k = 0;k<16;k++) {
+    document.write('<tbody style="transform: translateZ('+(-k*25)+'px)">')
+    for(var i = 0; i< 16;i++) {
+
+      document.write('<tr>')
+
+      for(var j=0;j<16;j++) {
+        document.write('<td bgcolor="'+getColor(i,j,k)+'"></td>')
+      }
+
+      document.write('</tr>')
+
+    }
+    document.write('</tbody>')
+  }
+
+    function getSingleColor(n){
+      switch (n) {
+        case 0:
+          return '0'
+        case 1:
+          return '1'
+        case 2:
+          return '2'
+        case 3:
+          return '3'
+        case 4:
+          return '4'
+        case 5:
+          return '5'
+        case 6:
+          return '6'
+        case 7:
+          return '7'
+        case 8:
+          return '8'
+        case 9:
+          return '9'
+        case 10:
+          return 'a'
+        case 11:
+          return 'b'
+        case 12:
+          return 'c'
+        case 13:
+          return 'd'
+        case 14:
+          return 'e'
+        case 15:
+          return 'f'
+      }
+    }
+
+    function getColor(r,g,b) {
+      return '#'+getSingleColor(r) + getSingleColor(g) + getSingleColor(b)
+    }
+  </script>
+</table>
+</div>
+</body>
+</html>
+

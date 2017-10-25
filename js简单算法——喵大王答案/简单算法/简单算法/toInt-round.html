@@ -1,0 +1,26 @@
+<script>
+
+var toInt = function(n) {
+  return n - (n % 1)
+}
+
+var round = function(n) {
+  // var s = n%1
+  // if (s < 0.5) {
+  //   return parseInt(n)
+  // } else {
+  //   return parseInt(n) + 1
+  // }
+
+  // 1 -> 1.5 -> 1
+  // 1.1 -> 1.6 -> 1
+  // 1.4 -> 1.9 -> 1
+  // 1.5 -> 2 -> 2
+  // 1.999 -> 2.499 -> 2
+
+  return toInt(n + 0.5)
+
+}
+
+
+</script>

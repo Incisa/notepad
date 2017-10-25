@@ -1,0 +1,28 @@
+<script>
+
+var power = function(m, n) {
+  var result = 1
+
+  var counter = Math.abs(n)
+
+  if (m == 0 && n == 0) {
+    return NaN
+  }
+
+  while (counter--) {
+    result *= m
+  }
+
+  if (n < 0) {
+    return 1/result
+  } else {
+    return result
+  }
+}
+
+var m = +prompt()
+var n = +prompt()
+
+alert(power(m,n))
+
+</script>

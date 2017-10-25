@@ -1,0 +1,29 @@
+<script>
+
+var n = +prompt()
+
+var left = 0
+var right = n
+
+var middle = (left + right) / 2
+
+while ( Math.abs(middle*middle - n) > 0.000000000001 ) {
+
+  console.log(middle)
+
+  if (middle * middle > n) {//middle 大于 根号n
+    right = middle
+  } /*else {
+    left = middle
+  }*/
+
+  if (middle * middle < n) {//middle 小于 根号n
+    left = middle
+  }
+
+  middle = (left + right) /2
+}
+
+console.log(middle)
+
+</script>

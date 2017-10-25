@@ -1,0 +1,71 @@
+<script>
+  
+
+var o = {
+  foo: 1,
+  bar: {
+    baar: function() {
+      console.log(this)
+    }
+  }
+}
+
+o.f = function() {
+  console.log(this)
+}
+
+o.f()
+o.bar.baar()
+
+var array = [1,2,3]
+
+array.sum = function() {
+  var sum = 0
+  for (var i = 0; i<a.length; i++) {
+    sum = sum + a[i]
+  }
+  return sum 
+}
+
+function def(a,b,c) {
+  console.log(this)
+}
+
+array.abc = def
+array.abc()
+
+def()
+window.def()
+
+def.apply({a:3},[])//强行设置def函数内部的this为{a:3}
+
+deff = def.bind({a:2}, 1, 2)//把def里面的this，第一个参数，第二个参数分别固定为{a:2},1,2，返回的函数在调用时只需要传入一个参数，即原函数的第三个参数
+deff(8)
+
+
+a.slice.apply(args)
+[11, 22, 33]
+args.slice = a.slice
+slice() { [native code] }
+args.slice()
+[11, 22, 33]
+
+function slice(start, end) {
+  // `this` is tobe sliced...
+
+  if (start === undefined) {
+    start = 0
+  }
+  if (end === undefined) {
+    end = this.length
+  }
+  var result = []
+
+  for(var i = start;i<end;i++) {
+    result.push(this[i])
+  }
+
+  return result
+}
+
+</script>

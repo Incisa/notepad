@@ -1,0 +1,43 @@
+<script>
+
+var n = +prompt()
+var isPrime
+
+
+isPrime = true
+
+for (var i = 2; i < n; i++) {
+  if (n % i == 0) {
+    isPrime = false
+    break;
+  }
+}
+
+if (isPrime) {
+  console.log(n)
+}
+
+
+var counter = 0
+
+for (var j = 100; j<=200; j++) {
+  n = j
+  isPrime = true
+
+  for (var i = 2; i < n; i++) {
+    counter++
+    if (n % i == 0) {
+      isPrime = false
+      break;
+    }
+  }
+
+  if (isPrime) {
+    console.log(n)
+  }
+}
+
+console.log(counter)
+
+</script>
+

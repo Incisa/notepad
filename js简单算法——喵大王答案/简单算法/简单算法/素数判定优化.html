@@ -1,0 +1,27 @@
+<script>
+
+var result = [2]
+
+var isIPrime
+
+for (var i = 3; i<=100; i+=2) {
+  isIPrime = true
+  for (var j = 0; j<result.length; j++) {
+    // 当前我们需要判断i能否除尽result[j]
+    // 同时，如果result[j]大于根号i，result[j]根本就不用判断了
+    if (result[j] > Math.sqrt(i)) {
+      break
+    }
+    if (i % result[j] == 0) {
+      isIPrime = false
+      break
+    }
+  }
+  if (isIPrime == true) {
+    result.push(i)
+  }
+}
+
+console.log(result)
+
+</script>
