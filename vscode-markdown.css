@@ -21,7 +21,7 @@ body {
 }
 
 .vscode-dark code {
-    font-family: "Operator Mono";
+    font-family: "Monaco";
     font-size: 14px;
 	color: #90C378;
 }
@@ -43,7 +43,7 @@ body {
 
 .vscode-dark blockquote {
 	color: #ABB2BF;
-    font-family: "STKaiti", georgia, serif;
+    font-family: "Monaco";
 	/*font-style: italic;*/
 	background: transparent;
 	border-color: #2C323C;
