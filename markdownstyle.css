@@ -1,0 +1,50 @@
+body {
+    font-family: "PingFang SC";
+}
+.vscode-dark a {
+	color: #61AFEF;
+}
+
+.vscode-dark h1,
+.vscode-dark h2,
+.vscode-dark h3,
+.vscode-dark h4,
+.vscode-dark h5,
+.vscode-dark h6 {
+	font-weight: 600;
+	color: #E06C75;
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #ABB2BF;
+}
+
+.vscode-dark code {
+    font-family: "Monaco";
+    font-size: 14px;
+	color: #90C378;
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code>div {
+	background-color: #2C323C;
+}
+
+.vscode-dark table>thead>tr>th {
+	border-color: #2C323C;
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table>tbody>tr+tr>td {
+	border-color: #2C323C;
+}
+
+.vscode-dark blockquote {
+	color: #ABB2BF;
+    font-family: "Monaco";
+	/*font-style: italic;*/
+	background: transparent;
+	border-color: #2C323C;
+}
